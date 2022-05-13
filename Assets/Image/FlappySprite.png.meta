@@ -96,6 +96,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -676,6 +677,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FlappySprite_5: -2189760277239767677
+      FlappySprite_7: 1986689339592206782
+      FlappySprite_9: -5675372634560720195
+      FlappySprite_15: 4668432632566684633
+      FlappySprite_17: 9123301497019750693
+      FlappySprite_8: 5526795317243092819
+      FlappySprite_3: 2244422006648943470
+      FlappySprite_4: 4831666216026376509
+      FlappySprite_21: 640308084270695934
+      FlappySprite_16: 4975625602093027707
+      FlappySprite_10: 7210910845769165385
+      FlappySprite_6: -5744286731407107801
+      FlappySprite_13: -6837194877187999858
+      FlappySprite_19: 1277120520700412190
+      FlappySprite_18: -186616828330851123
+      FlappySprite_22: 2399618963034968156
+      FlappySprite_14: 4943538337496720943
+      FlappySprite_1: 4594254563426863132
+      FlappySprite_0: 9110058797422003010
+      FlappySprite_11: -4960910553369822600
+      FlappySprite_12: 4669206450694340632
+      FlappySprite_20: -1163988731671769452
+      FlappySprite_2: -8732098227339218509
+      FlappySprite_23: 9121478256440576238
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
