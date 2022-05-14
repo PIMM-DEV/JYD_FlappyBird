@@ -26,7 +26,7 @@ public class ColumnMaker : MonoBehaviour
 
             float randomY = Random.Range(4f, -2f);
 
-            temp.transform.localPosition = new Vector3(-gameObject.transform.localPosition.x + 5, randomY, 0);
+            temp.transform.localPosition = new Vector3(-gameObject.transform.localPosition.x + 5f, randomY, 0);
             temp.transform.localScale = new Vector3(1, 1, 1);
         }
     }

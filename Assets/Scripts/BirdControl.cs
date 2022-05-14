@@ -30,5 +30,6 @@ public class BirdControl : MonoBehaviour
     {
         Debug.Log("GameOver");
         Time.timeScale = 0;
+        gameObject.GetComponent<Animator>().Play("Die");
     }
 }
