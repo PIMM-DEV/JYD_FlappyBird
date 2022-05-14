@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BirdControl : MonoBehaviour
 {
+    public Text RestartUI;
+
+    public static bool gameover = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         Screen.SetResolution(480, 800, false);
+        RestartUI.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,12 +30,13 @@ public class BirdControl : MonoBehaviour
         {
             Time.timeScale = 1;
             Application.LoadLevel("MainScene");
+            RestartUI.gameObject.SetActive(false);
         }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        Debug.Log("GameOver");
+        RestartUI.gameObject.SetActive(true);
         Time.timeScale = 0;
         gameObject.GetComponent<Animator>().Play("Die");
     }
