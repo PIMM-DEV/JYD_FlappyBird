@@ -20,7 +20,7 @@ public class Level : MonoBehaviour
             return;
 
         gameTime++;
-        if (gameTime > 240)
+        if (gameTime > 240 && gameLevel < 2.3f)
         {
             gameObject.transform.localPosition += new Vector3(0.0006944f, 0, 0);
             Debug.Log(gameLevel);
@@ -29,6 +29,21 @@ public class Level : MonoBehaviour
         {
             cancel = true;
             gameLevel += 0.25f;
+        }
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            gameTime += 9600;
+        }
+        if (gameLevel == 2.25f)
+        {
+            gameLevel = 2f;
+            cancel = true;
+        }
+        if (gameTime > 9760f)
+        {
+            gameLevel = 0f;
+            cancel = true;
+
         }
     }
 }

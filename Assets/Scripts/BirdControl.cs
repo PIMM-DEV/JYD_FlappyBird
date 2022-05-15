@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BirdControl : MonoBehaviour
 {
     public Text RestartUI;
+    public Text WinUI;
 
     public static bool gameover = false;
 
@@ -35,14 +36,23 @@ public class BirdControl : MonoBehaviour
             gameover = false;
             Application.LoadLevel("MainScene");
             RestartUI.gameObject.SetActive(false);
+            WinUI.gameObject.SetActive(false);
+        }
+        if(Level.gameLevel == 0f)
+        {
+            gameObject.transform.localPosition += new Vector3(0.1f, 0, 0);
+            WinUI.gameObject.SetActive(true);
         }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        gameover = true;
-        RestartUI.gameObject.SetActive(true);
-        Time.timeScale = 0;
-        gameObject.GetComponent<Animator>().Play("Die");    
+        if (Level.gameLevel != 0f)
+        {
+            gameover = true;
+            RestartUI.gameObject.SetActive(true);
+            Time.timeScale = 0;
+            gameObject.GetComponent<Animator>().Play("Die");
+        }    
     }
 }
