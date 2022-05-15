@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Column: {fileID: 7468734799973201649, guid: f1da42d22fa9bd246a00062cad89fcb8, type: 3}
-  LColumn: {fileID: 7468734799973201649, guid: be89e0876eb7fac49b75213e61a60acf, type: 3}
-  RColumn: {fileID: 7468734799973201649, guid: f367013f7f81bc6489645f8e00f0921b, type: 3}
+  RColumn: {fileID: 7468734799973201649, guid: 4b16a811b5f36b349948c438bf3d88c0, type: 3}
+  FColumn: {fileID: 7468734799973201649, guid: 49ff98ba238d8a244b435442314116bc, type: 3}
   score: -2
   ScoreUI: {fileID: 1004500974}
 --- !u!4 &118373283 stripped
@@ -1558,8 +1558,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736365134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5, y: -1.21, z: 9.926548}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3.65, y: -1.21, z: 9.926548}
+  m_LocalScale: {x: 2.25, y: 2.25, z: 1.0265}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1458164447}

@@ -44,7 +44,7 @@ public class BirdControl : MonoBehaviour
             WinUI.gameObject.SetActive(true);
         }
     }
-
+/*
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (Level.gameLevel != 0f)
@@ -55,4 +55,5 @@ public class BirdControl : MonoBehaviour
             gameObject.GetComponent<Animator>().Play("Die");
         }    
     }
+*/
 }
