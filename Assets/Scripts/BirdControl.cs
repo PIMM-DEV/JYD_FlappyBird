@@ -16,6 +16,7 @@ public class BirdControl : MonoBehaviour
         Application.targetFrameRate = 60;
         Screen.SetResolution(480, 800, false);
         RestartUI.gameObject.SetActive(false);
+        WinUI.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,7 +45,6 @@ public class BirdControl : MonoBehaviour
             WinUI.gameObject.SetActive(true);
         }
     }
-/*
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (Level.gameLevel != 0f)
@@ -55,5 +55,4 @@ public class BirdControl : MonoBehaviour
             gameObject.GetComponent<Animator>().Play("Die");
         }    
     }
-*/
 }

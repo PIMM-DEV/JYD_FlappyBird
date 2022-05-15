@@ -30,10 +30,6 @@ public class Level : MonoBehaviour
             cancel = true;
             gameLevel += 0.25f;
         }
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            gameLevel = 2f;
-        }
         if (gameLevel == 2.25f)
         {
             cancel = true;
