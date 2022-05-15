@@ -21,7 +21,7 @@ public class GroundMove : MonoBehaviour
         if(Time.timeScale == 0)
             return;
 
-        gameObject.transform.localPosition += new Vector3(-0.05f, 0, 0); // 바닥이동, 속도조절 필요
+        gameObject.transform.localPosition += new Vector3(-0.04f * Level.gameLevel, 0, 0); // 바닥이동, 속도조절 필요
 
         _count = 2 + (int) (-gameObject.transform.localPosition.x / 7.67f);
 

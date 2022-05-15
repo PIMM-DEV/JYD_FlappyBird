@@ -29,6 +29,10 @@ public class BirdControl : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             Time.timeScale = 1;
+            Level.gameLevel = 1f;
+            Level.gameTime = 0;
+            Level.cancel = false;
+            gameover = false;
             Application.LoadLevel("MainScene");
             RestartUI.gameObject.SetActive(false);
         }
@@ -36,8 +40,9 @@ public class BirdControl : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        gameover = true;
         RestartUI.gameObject.SetActive(true);
         Time.timeScale = 0;
-        gameObject.GetComponent<Animator>().Play("Die");
+        gameObject.GetComponent<Animator>().Play("Die");    
     }
 }

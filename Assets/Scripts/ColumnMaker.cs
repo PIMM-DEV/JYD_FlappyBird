@@ -8,24 +8,27 @@ public class ColumnMaker : MonoBehaviour
     public GameObject Column;
 
     private float nowTime;
-    private float makeTime = 2f;
+    private float makeTime = 2.5f;
 
     public Text ScoreUI;
-    private int score = 0;
-    private float scoreTime;
+    private int score = -2;
 
 
     // Start is called before the first frame update
     void Start()
     {
         nowTime = Time.time;
-        scoreTime = Time.time + 2.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time - nowTime > makeTime)
+        if(Level.cancel == true)
+        {
+            nowTime = Time.time;
+        }
+
+        if(Time.time - nowTime > makeTime && Level.cancel == false)
         {
             nowTime = Time.time;
             GameObject temp = Instantiate(Column);
@@ -33,15 +36,21 @@ public class ColumnMaker : MonoBehaviour
 
             float randomY = Random.Range(4f, -2f);
 
-            temp.transform.localPosition = new Vector3(-gameObject.transform.localPosition.x + 5f, randomY, 0);
+            temp.transform.localPosition = new Vector3(-gameObject.transform.localPosition.x + 10f, randomY, 0);
             temp.transform.localScale = new Vector3(1, 1, 1);
+
+            score++;
+            if (score < 0)
+            {
+                ScoreUI.text = "0";
+            }
+            else
+            {
+                ScoreUI.text = score.ToString();
+            }
         }
 
-        if(Time.time - scoreTime > 2)
-        {
-            scoreTime = Time.time;
-            score++;
-            ScoreUI.text = score.ToString();
-        }
+        Level.cancel = false;
+        makeTime = 2.5f / Level.gameLevel;
     }
 }
