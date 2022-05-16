@@ -20,9 +20,15 @@ public class BackgroundMove : MonoBehaviour
     {
         if(Time.timeScale == 0)
             return;
-
-        gameObject.transform.localPosition += new Vector3(-0.01f * Level.gameLevel, 0, 0);
-
+        if(Level.Hellmode == 2)
+        {
+            gameObject.transform.localPosition += new Vector3(-0.01f * (Level.gameLevel + 0.5f), 0, 0);
+        }
+        else
+        {
+            gameObject.transform.localPosition += new Vector3(-0.01f * Level.gameLevel, 0, 0);
+        }
+        
         _count = 2 + (int) (-gameObject.transform.localPosition.x / 7f);
 
         if(_index != _count)

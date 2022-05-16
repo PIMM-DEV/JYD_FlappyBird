@@ -7,6 +7,8 @@ public class Level : MonoBehaviour
     public static float gameTime;
     public static float gameLevel = 1f;
     public static bool cancel = false;
+    public static int Hellmode = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,10 @@ public class Level : MonoBehaviour
             gameLevel = 0f;
             cancel = true;
 
+        }
+        if (Input.GetKeyDown(KeyCode.H) && gameTime < 300f)
+        {
+            Hellmode = 2;
         }
     }
 }

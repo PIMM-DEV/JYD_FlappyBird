@@ -9,6 +9,9 @@ public class BirdControl : MonoBehaviour
     public Text WinUI;
 
     public static bool gameover = false;
+    private float birdcolor = 255f;
+    SpriteRenderer bird;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,7 @@ public class BirdControl : MonoBehaviour
         Screen.SetResolution(480, 800, false);
         RestartUI.gameObject.SetActive(false);
         WinUI.gameObject.SetActive(false);
+        bird = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,11 +42,25 @@ public class BirdControl : MonoBehaviour
             Application.LoadLevel("MainScene");
             RestartUI.gameObject.SetActive(false);
             WinUI.gameObject.SetActive(false);
+            Level.Hellmode = 1;
         }
         if(Level.gameLevel == 0f)
         {
             gameObject.transform.localPosition += new Vector3(0.1f, 0, 0);
             WinUI.gameObject.SetActive(true);
+            if (Level.Hellmode == 1)
+            {
+                WinUI.text = "You Win!\nThanks For Playing!\nPress 'H' Key to\ntry HELLMODE...";
+            }
+            if (Level.Hellmode == 2)
+            {
+                WinUI.text = "You Win 'HELLMODE'!\nThanks for Playing!";
+            }
+        }
+        if (Level.Hellmode == 2 && birdcolor > 100)
+        {
+            birdcolor -= 0.5f;
+            bird.material.color = new Color(255/255f, birdcolor/255f, birdcolor/255f);
         }
     }
     void OnCollisionEnter2D(Collision2D coll)
@@ -55,4 +73,5 @@ public class BirdControl : MonoBehaviour
             gameObject.GetComponent<Animator>().Play("Die");
         }    
     }
+
 }

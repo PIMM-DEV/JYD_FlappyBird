@@ -20,9 +20,14 @@ public class GroundMove : MonoBehaviour
     {
         if(Time.timeScale == 0)
             return;
-
-        gameObject.transform.localPosition += new Vector3(-0.04f * Level.gameLevel, 0, 0); // 바닥이동, 속도조절 필요
-
+        if(Level.Hellmode == 2)
+        {
+            gameObject.transform.localPosition += new Vector3(-0.04f * (Level.gameLevel + 0.5f), 0, 0);
+        }
+        else
+        {
+            gameObject.transform.localPosition += new Vector3(-0.04f * Level.gameLevel, 0, 0);
+        }
         _count = 2 + (int) (-gameObject.transform.localPosition.x / 7.67f);
 
         if(_index != _count)

@@ -13,6 +13,6 @@ public class FallingColumn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localPosition += new Vector3(0, -0.01f * Level.gameLevel, 0);
+        gameObject.transform.Translate(new Vector3(0, -0.01f * Level.gameLevel * Level.Hellmode, 0));
     }
 }
